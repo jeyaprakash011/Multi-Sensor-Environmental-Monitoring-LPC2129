@@ -2,9 +2,9 @@
 #include "header.h"
 
 #define WATER_PIN     (1<<5)
-#define GREEN_LED     (1<<17)
-#define YELLOW_LED    (1<<18)
-#define RED_LED       (1<<19)
+#define GREEN_LED     (1<<0)
+#define YELLOW_LED    (1<<1)
+#define RED_LED       (1<<2)
 
 float temperature;
 unsigned int ldr_value, soil_value,adc_value;
@@ -59,7 +59,7 @@ void uart_display(void){
 
 int main(void)
 {
-    VPBDIV = 0;
+    
     IODIR0 |= GREEN_LED|YELLOW_LED|RED_LED;
     IOSET0 = GREEN_LED|YELLOW_LED|RED_LED; 
 		adc_init();
